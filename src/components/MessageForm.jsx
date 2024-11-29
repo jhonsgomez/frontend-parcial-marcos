@@ -70,7 +70,7 @@ export default function MessageForm({ onMessageSent }) {
                         type="submit"
                         className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center"
                     >
-                        <Send className="mr-2" /> Enviar
+                        <Send />
                     </button>
 
                     <input
@@ -86,7 +86,7 @@ export default function MessageForm({ onMessageSent }) {
                         onClick={() => imageInputRef.current.click()}
                         className="flex items-center bg-green-100 text-green-600 px-3 py-1 rounded-lg hover:bg-green-200"
                     >
-                        <ImageIcon className="mr-2" size={20} />Imagen
+                        <ImageIcon size={20} />
                     </button>
 
                     <input
@@ -100,9 +100,9 @@ export default function MessageForm({ onMessageSent }) {
                     <button
                         type="button"
                         onClick={() => pdfInputRef.current.click()}
-                        className="flex items-center bg-blue-100 text-blue-600 px-3 py-1 rounded-lg hover:bg-blue-200"
+                        className="flex items-center bg-red-100 text-red-600 px-3 py-1 rounded-lg hover:bg-red-200"
                     >
-                        <FileText className="mr-2" size={20} />PDF
+                        <FileText size={20} />
                     </button>
                 </div>
                 {imageFile && <span className="text-sm text-gray-600">{imageFile.name}</span>}

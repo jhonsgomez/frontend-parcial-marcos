@@ -1,6 +1,6 @@
 "use client";
 
-import { Send, User, Image as ImageIcon, FileText, Edit, X, Trash } from "lucide-react";
+import { Send, User, Link, Image as ImageIcon, FileText, Edit, X, Trash } from "lucide-react";
 import Image from "next/image";
 import { deleteMessage, getAuthorByUsername, updateUserStatus } from "@/utils/api-chat";
 import { useState, useEffect } from "react";
@@ -59,9 +59,9 @@ export default function MessageList({ messages, onMessageDeleted }) {
                     <a
                         href={message.content}
                         target="_blank"
-                        className="text-blue-600 underline hover:text-blue-800 break-words"
+                        className="flex items-center text-blue-600 underline hover:text-blue-800 break-words"
                     >
-                        {message.content}
+                        <Link className="mr-2" /> {message.content}
                     </a>
                 ) : (
                     <span>{message.content}</span>
@@ -86,7 +86,7 @@ export default function MessageList({ messages, onMessageDeleted }) {
                         href={`http://127.0.0.1:8000${message.pdf_file}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:text-blue-800"
+                        className="flex items-center underline text-red-600 hover:text-red-800"
                     >
                         <FileText className="mr-2" /> archivo.pdf
                     </a>
